@@ -8,8 +8,11 @@ namespace verifica
 {
     internal class Program
     {
+        static string file = "file.txt"; 
         static void Main(string[] args)
         {
+            
+            
         }
     }
 }

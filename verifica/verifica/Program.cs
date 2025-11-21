@@ -9,6 +9,7 @@ namespace verifica
     internal class Program
     {
         static string file = "file.txt";
+        static Biblioteca biblioteca;
         static void Main(string[] args)
         {
             string nome, indirizzo, orari;//dati della biblioteca
@@ -18,7 +19,7 @@ namespace verifica
             indirizzo = Console.ReadLine();
             Console.WriteLine("Inserisci gli orari di apertura della biblioteca:");
             orari = Console.ReadLine();
-            Biblioteca biblioteca = new Biblioteca(nome, indirizzo, orari);//creazione dell'oggetto biblioteca
+            biblioteca = new Biblioteca(nome, indirizzo, orari);//creazione dell'oggetto biblioteca
 
             Console.WriteLine("Console della biblioteca");
             Console.WriteLine("Scegliere una tra le seguenti opzioni:");
@@ -33,7 +34,7 @@ namespace verifica
                 switch (scelta)
                 {
                     case "1":
-                        AggiungiLibro();
+                        Program.AggiungiLibro();
                         break;
                     case "2":
                         CercaLibro();
@@ -63,34 +64,34 @@ namespace verifica
         }
 
 
-        private void AggiungiLibro() //metodo per aggiungere un libro
+        static public void AggiungiLibro() //metodo per aggiungere un libro
         {
-            string titolo, autore, annoDiPubblicazione, Editore;
-            int numeroDiPagine;
+            string titolo, autore,Editore;
+            int numeroDiPagine, annoDiPubblicazione;
             Console.WriteLine("Insersci l'autore");
             autore = Console.ReadLine();
             Console.WriteLine("Insersci il titolo");
             titolo = Console.ReadLine();
             Console.WriteLine("Insersci L'anno di pubblicazione");
-            annoDiPubblicazione = Console.ReadLine();
+            annoDiPubblicazione = int.Parse(Console.ReadLine());
             Console.WriteLine("Insersci l'editore");
             Editore = Console.ReadLine();
             Console.WriteLine("Insersci il numero di pagine");
             numeroDiPagine = int.Parse(Console.ReadLine());
             Libro libro = new Libro(titolo, autore, annoDiPubblicazione, Editore, numeroDiPagine);
-            Biblioteca.AggiungiLibro(libro);
+            biblioteca.AggiungiLibro(libro);
         }
-        private void CercaLibro() //metodo per cercare un libro
+        static public void CercaLibro() //metodo per cercare un libro
         {
             Console.WriteLine("Inserisci il titolo del libro da cercare:");
             string titolo = Console.ReadLine();
-            Console.WriteLine(Biblioteca.CercaLibro(titolo).ToString());
+            Console.WriteLine(biblioteca.cercaLibro(titolo).ToString());
         }
-        private void CercaAutore() //metodo per cercare un autore
+        static public void CercaAutore() //metodo per cercare un autore
         {
             Console.WriteLine("Inserisci il nome dell'autore da cercare:");
             string autore = Console.ReadLine();
-            List<Libro> libriAutore = Biblioteca.CercaAutore(autore);
+            List<Libro> libriAutore = biblioteca.CercaAutore(autore);
             foreach (Libro libro in libriAutore)
             {
                 Console.WriteLine(libro.ToString());

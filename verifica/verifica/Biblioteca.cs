@@ -36,7 +36,7 @@ namespace verifica
             foreach (var libro in libri)
             {
                 // Assuming Libro has a property 'Titolo'
-                if (libro.GetTitolo() == titolo)
+                if (libro.titolo == titolo)
                 {
                      return libro;
                  }
@@ -51,7 +51,7 @@ namespace verifica
             foreach (var libro in libri)
             {
                 
-                if (libro.GetAutore() == autore)
+                if (libro.titolo == autore)
                 {
                      libriAutore.Add(libro);
                 }

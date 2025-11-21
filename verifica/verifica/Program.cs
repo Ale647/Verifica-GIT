@@ -11,14 +11,14 @@ namespace verifica
         static string file = "file.txt";
         static void Main(string[] args)
         {
-            string nome, indirizzo, orari;
+            string nome, indirizzo, orari;//dati della biblioteca
             Console.WriteLine("Inserisci il nome della biblioteca:");
             nome = Console.ReadLine();
             Console.WriteLine("Inserisci l'indirizzo della biblioteca:");
             indirizzo = Console.ReadLine();
             Console.WriteLine("Inserisci gli orari di apertura della biblioteca:");
             orari = Console.ReadLine();
-            Biblioteca biblioteca = new Biblioteca(nome, indirizzo, orari);
+            Biblioteca biblioteca = new Biblioteca(nome, indirizzo, orari);//creazione dell'oggetto biblioteca
 
             Console.WriteLine("Console della biblioteca");
             Console.WriteLine("Scegliere una tra le seguenti opzioni:");
@@ -28,7 +28,7 @@ namespace verifica
             Console.WriteLine("4.Deterrmina i libri presenti");
             Console.WriteLine("5.Esci");
             string scelta = Console.ReadLine();
-            do
+            do//ciclo do-while per il menu
             {
                 switch (scelta)
                 {
@@ -63,7 +63,7 @@ namespace verifica
         }
 
 
-        private void AggiungiLibro()
+        private void AggiungiLibro() //metodo per aggiungere un libro
         {
             string titolo, autore, annoDiPubblicazione, Editore;
             int numeroDiPagine;
@@ -80,13 +80,13 @@ namespace verifica
             Libro libro = new Libro(titolo, autore, annoDiPubblicazione, Editore, numeroDiPagine);
             Biblioteca.AggiungiLibro(libro);
         }
-        private void CercaLibro()
+        private void CercaLibro() //metodo per cercare un libro
         {
             Console.WriteLine("Inserisci il titolo del libro da cercare:");
             string titolo = Console.ReadLine();
             Console.WriteLine(Biblioteca.CercaLibro(titolo).ToString());
         }
-        private void CercaAutore()
+        private void CercaAutore() //metodo per cercare un autore
         {
             Console.WriteLine("Inserisci il nome dell'autore da cercare:");
             string autore = Console.ReadLine();

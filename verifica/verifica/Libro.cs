@@ -13,7 +13,7 @@ namespace verifica
         public int annoPubblicazione;
         public string editore;
         public int numeroPagine;
-        public Libro(string titolo, string autore, int annoPubblicazione, string editore, int numeroPagine)
+        public Libro(string titolo, string autore, int annoPubblicazione, string editore, int numeroPagine) //Costruttore
         {
             this.titolo = titolo;
             this.autore = autore;
@@ -22,11 +22,11 @@ namespace verifica
             this.numeroPagine = numeroPagine;
         }
 
-        public override string ToString()
+        public override string ToString() //Metodo ToString per stampare le informazioni del libro
         {
             return $"{titolo}, {autore}, {annoPubblicazione}, {editore}, {numeroPagine} pagine";
         }
-        public string ReadingTime()
+        public string ReadingTime() // Metodo per calcolare il tempo di lettura stimato
         {
             string tempo;
             if (numeroPagine < 100)

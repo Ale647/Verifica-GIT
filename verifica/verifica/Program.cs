@@ -8,7 +8,7 @@ namespace verifica
 {
     internal class Program
     {
-        static string file = "file.txt";
+        static string file = "file.txt"; // il è file inutile per lo sviluloppo del progetto (commento per testare il pull)
         static Biblioteca biblioteca;
         static void Main(string[] args)
         {

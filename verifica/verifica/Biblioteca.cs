@@ -51,7 +51,7 @@ namespace verifica
             foreach (var libro in libri)
             {
                 
-                if (libro.titolo == autore)
+                if (libro.autore == autore)
                 {
                      libriAutore.Add(libro);
                 }

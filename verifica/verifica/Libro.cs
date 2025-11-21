@@ -8,11 +8,14 @@ namespace verifica
 {
     internal class Libro
     {
-        public string titolo;
-        public string autore;
-        public int annoPubblicazione;
-        public string editore;
-        public int numeroPagine;
+        public string titolo { get; set; }
+        public string autore { get; set; }
+        public int annoPubblicazione { get; set; }
+        public string editore{ get; set; }
+        public int numeroPagine { get; set; }
+
+        
+
         public Libro(string titolo, string autore, int annoPubblicazione, string editore, int numeroPagine) //Costruttore
         {
             this.titolo = titolo;

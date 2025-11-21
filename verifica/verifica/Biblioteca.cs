@@ -20,5 +20,45 @@ namespace verifica
             this.orarioApertura = orarioApertura;
             this.libri = new List<Libro>();
         }
+
+        public int GetNumeroLibri()
+        {
+            return libri.Count;
+        }
+
+        public void AggiungiLibro(Libro libro)
+        {
+            libri.Add(libro);
+        }
+
+        public Libro cercaLibro(string titolo)
+        {
+            foreach (var libro in libri)
+            {
+                // Assuming Libro has a property 'Titolo'
+                if (libro.GetTitolo() == titolo)
+                {
+                     return libro;
+                 }
+            }
+
+            return null;
+        }
+
+        public List<Libro>CercaAutore(string autore)
+        {
+            List<Libro> libriAutore = new List<Libro>();
+            foreach (var libro in libri)
+            {
+                
+                if (libro.GetAutore() == autore)
+                {
+                     libriAutore.Add(libro);
+                }
+            }
+
+            return libriAutore;
+        }
+
     }
 }
